@@ -1,12 +1,11 @@
 import Navbar from "../components/Navbar"
-import User from "../components/User"
+import Users from "../components/Users"
 
 const HomePage = () => {
   return (
     <div>
         <Navbar />
-        <User />
-    Homepage
+        <Users />
     </div>
   )
 }
