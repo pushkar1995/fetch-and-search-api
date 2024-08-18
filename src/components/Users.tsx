@@ -1,4 +1,10 @@
-const Users = () => {
+import { useQuery } from "react-query"
+import { getUsers } from "../hooks/useUserData"
+
+export default function Users () {
+    const { data } = useQuery("user", getUsers())
+
+    console.log(data)
     return (
       <div className="flex flex-col m-16">
         <h1 className="font-bold flex justify-center mb-4 text-xl">USERS</h1>
@@ -28,4 +34,3 @@ const Users = () => {
     )
   }
   
-  export default Users

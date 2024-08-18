@@ -1,13 +1,11 @@
 import Navbar from "../components/Navbar"
 import Users from "../components/Users"
 
-const HomePage = () => {
+export default function HomePage() {
   return (
-    <div>
+    <>
         <Navbar />
         <Users />
-    </div>
+    </>
   )
 }
-
-export default HomePage
