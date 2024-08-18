@@ -1,4 +1,4 @@
-import { User } from "./Interfaces"
+import { User } from "../interface"
 
 interface UserProps {
     userData: User[]
@@ -34,16 +34,11 @@ export default function Users (props: UserProps) {
                         <td className="border-2 p-8">{user.name}</td>
                         <td className="border-2 p-8">{user.username}</td>
                         <td className="border-2 p-8">{user.email}</td>
-                        {user.address.map(data =>  {
-                            return (
-                            <tr>
-                                <td>{data.street}</td>
-                            </tr>
-                            )
-                        }) }
-                        {/* <td className="border-2 p-8">{user.address.street}</td> */}
+                        <td className="border-2 p-8">
+                        {`${user.address.street}, ${user.address.suite}, ${user.address.city}, ${user.address.zipcode}`}
+                        </td>
                         <td className="border-2 p-8">{user.phone}</td>
-                        {/* <td className="border-2 p-8">{user.company}</td> */}
+                        <td className="border-2 p-8">{user.company.name}</td>
                     </tr>
                 )
             }) }
