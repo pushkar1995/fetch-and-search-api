@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom';
-import PropTypes from 'prop-types';
 import { FaHome } from 'react-icons/fa';
 
 const Navbar = () => (
@@ -12,13 +11,5 @@ const Navbar = () => (
     </nav>
   </>
 );
-
-Navbar.defaultProps = {
-  title: '',
-};
-
-Navbar.propTypes = {
-  title: PropTypes.string,
-};
 
 export default Navbar;

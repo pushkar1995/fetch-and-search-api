@@ -1,13 +1,14 @@
+import { useQuery } from "react-query"
 import Navbar from "../components/Navbar"
 import Users from "../components/Users"
+import { getUsers } from "../hooks/useUserData"
 
-const HomePage = () => {
+export default function HomePage() {
+    const { data } = useQuery("user", getUsers())
   return (
-    <div>
+    <>
         <Navbar />
-        <Users />
-    </div>
+        <Users userData = {data} />
+    </>
   )
 }
-
-export default HomePage
