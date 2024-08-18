@@ -1,9 +1,15 @@
 export interface User {
-    id: string;
+    id: number;
     name: string;
     username: string;
     email: string;
-    address: string;
+
+    address: object;
+    street: string;
+    suite: string;
+    city: string;
+    zipcode: number
+
     phone: number;
-    company: string
+    company: object
 }
