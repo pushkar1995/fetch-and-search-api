@@ -1,7 +1,6 @@
-import { useState, useEffect } from "react"
-import axios from "axios";
+import { useState } from "react"
 import { User } from "../interface"
-import SearchBar from "./SearchBar"
+// import SearchBar from "./SearchBar"
 
 interface UserProps {
     userData: User[]
@@ -14,7 +13,6 @@ export default function Users (props: UserProps) {
   
     // Filter users based on search input
     const filteredUsers = userData.filter((user) => { 
-      // console.log(filteredUsers)
       return  user.name.toLowerCase().includes(searchUser.toLowerCase()) 
         // user.username.toLowerCase().includes(searchUser.toLowerCase()) ||
         // user.email.toLowerCase().includes(searchUser.toLowerCase())
@@ -52,7 +50,7 @@ export default function Users (props: UserProps) {
             </tr>
           </thead>
           <tbody>
-            {userData?.map((user:any) => { 
+            {userData?.map((user) => { 
                   return (
                       <tr key={user.id}>
                           <td className="border-2 p-8">{user.id}</td>
