@@ -1,3 +1,5 @@
+Task is Completed using React with vite, alongside typescript, tailwindcss and react query to manage api.
+
 Task: Create a Searchable Data Table with React
 
 Objective: Build a simple React application that fetches data from a public API, displays it in a table, and allows the user to search through the data.
