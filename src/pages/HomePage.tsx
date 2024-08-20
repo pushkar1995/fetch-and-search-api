@@ -1,6 +1,6 @@
 
 import Navbar from "../components/Navbar"
-import Users from "../components/User/Users"
+import Users from "../components/Users/Users"
 
 export default function HomePage() {
     
