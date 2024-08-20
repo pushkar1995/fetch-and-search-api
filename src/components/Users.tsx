@@ -1,19 +1,43 @@
+import { useState } from "react"
 import { User } from "../interface"
+import SearchBar from "./SearchBar"
 
 interface UserProps {
     userData: User[]
  }
 
 export default function Users (props: UserProps) {
+    const [searchUser, setSearchUser] = useState('')
+    console.log(searchUser)
     const { userData } = props
 
 
-    // console.log(userData)
+    // Filter users based on search input
+    const filteredUsers = userData.filter((user) =>
+      user.name.toLowerCase().includes(searchUser.toLowerCase()) ||
+      user.username.toLowerCase().includes(searchUser.toLowerCase()) ||
+      user.email.toLowerCase().includes(searchUser.toLowerCase())
+    );
 
     return (
       <div className="flex flex-col m-16">
         <h1 className="font-bold flex justify-center mb-4 text-xl">USERS</h1>
-        <table className="table-auto">
+        {/* <SearchBar 
+          setSearchUser = {setSearchUser}
+        /> */}
+
+        <form className='w-[540px] relative'>
+          <div className='relative'>
+              <input 
+                  type='search' 
+                  placeholder='Search Users' 
+                  className='w-full p-4 text-black rounded-md bg-slate-200 border-0' 
+                  onChange={(e) => setSearchUser(e.target.value)}
+              />
+          </div>
+        </form>
+
+        <table className="table-auto mt-5">
           <thead className="h-20">
             <tr className="">
               <th className="border-2 p-8">Id:</th>
@@ -26,8 +50,7 @@ export default function Users (props: UserProps) {
             </tr>
           </thead>
           <tbody>
-            {userData?.map((user) => { 
-                console.log(userData)
+            {filteredUsers.map((user) => { 
                 return (
                     <tr key={user.id}>
                         <td className="border-2 p-8">{user.id}</td>
