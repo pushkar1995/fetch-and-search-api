@@ -1,14 +1,13 @@
-import { useQuery } from "react-query"
+
 import Navbar from "../components/Navbar"
-import Users from "../components/Users"
-import { getUsers } from "../hooks/useUserData"
+import Users from "../components/User/Users"
 
 export default function HomePage() {
-    const { data } = useQuery("user", getUsers())
+    
   return (
-    <>
+    <div className="flex flex-col">
         <Navbar />
-        <Users userData = {data} />
-    </>
+        <Users />
+    </div>
   )
 }
