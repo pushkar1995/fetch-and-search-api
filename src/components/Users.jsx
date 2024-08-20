@@ -1,13 +1,38 @@
+import { useState } from "react"
 
-export default function Users (props) {
-    const { userData } = props
+export default function Users () {
+  const [searchUser, setSearchUser] = useState('')
+  const [input, setInput] = useState('')
 
+  const fetchUsers = () => { 
+    fetch('https://jsonplaceholder.typicode.com/users')
+      .then((response) => Response.json())
+      .then((json) => { 
+        console.log(json)
+      })
+  }
 
-    // console.log(userData)
+  const handleChange = () => {
+    setInput(value)
+    fetchUsers(value)
+   }
 
     return (
       <div className="flex flex-col m-16">
         <h1 className="font-bold flex justify-center mb-4 text-xl">USERS</h1>
+
+        <form className='w-[540px] relative'>
+          <div className='relative'>
+              <input 
+                  type='search' 
+                  placeholder='Search Users' 
+                  className='w-full p-4 text-black rounded-md bg-slate-200 border-0' 
+                  onChange={(e) => handleChange(e.target.value)}
+                  value={input}
+              />
+          </div>
+        </form>
+
         <table className="table-auto">
           <thead className="h-20">
             <tr className="">
@@ -21,7 +46,7 @@ export default function Users (props) {
             </tr>
           </thead>
           <tbody>
-            {userData?.map((user) => { 
+            {/* {fetchUsers.map((user) => { 
                 console.log(userData)
                 return (
                     <tr key={user.id}>
@@ -36,7 +61,7 @@ export default function Users (props) {
                         <td className="border-2 p-8">{user.company.name}</td>
                     </tr>
                 )
-            }) }
+            }) } */}
           </tbody>
         </table>
       </div>
