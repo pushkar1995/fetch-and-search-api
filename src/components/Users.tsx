@@ -1,4 +1,5 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
+import axios from "axios";
 import { User } from "../interface"
 import SearchBar from "./SearchBar"
 
@@ -8,16 +9,16 @@ interface UserProps {
 
 export default function Users (props: UserProps) {
     const [searchUser, setSearchUser] = useState('')
-    console.log(searchUser)
+    
     const { userData } = props
-
-
+  
     // Filter users based on search input
-    const filteredUsers = userData.filter((user) =>
-      user.name.toLowerCase().includes(searchUser.toLowerCase()) ||
-      user.username.toLowerCase().includes(searchUser.toLowerCase()) ||
-      user.email.toLowerCase().includes(searchUser.toLowerCase())
-    );
+    const filteredUsers = userData.filter((user) => { 
+      // console.log(filteredUsers)
+      return  user.name.toLowerCase().includes(searchUser.toLowerCase()) 
+        // user.username.toLowerCase().includes(searchUser.toLowerCase()) ||
+        // user.email.toLowerCase().includes(searchUser.toLowerCase())
+    });
 
     return (
       <div className="flex flex-col m-16">
@@ -33,6 +34,7 @@ export default function Users (props: UserProps) {
                   placeholder='Search Users' 
                   className='w-full p-4 text-black rounded-md bg-slate-200 border-0' 
                   onChange={(e) => setSearchUser(e.target.value)}
+                  value={searchUser}
               />
           </div>
         </form>
@@ -50,19 +52,19 @@ export default function Users (props: UserProps) {
             </tr>
           </thead>
           <tbody>
-            {filteredUsers.map((user) => { 
-                return (
-                    <tr key={user.id}>
-                        <td className="border-2 p-8">{user.id}</td>
-                        <td className="border-2 p-8">{user.name}</td>
-                        <td className="border-2 p-8">{user.username}</td>
-                        <td className="border-2 p-8">{user.email}</td>
-                        <td className="border-2 p-8">
-                        {`${user.address.street}, ${user.address.suite}, ${user.address.city}, ${user.address.zipcode}`}
-                        </td>
-                        <td className="border-2 p-8">{user.phone}</td>
-                        <td className="border-2 p-8">{user.company.name}</td>
-                    </tr>
+            {userData?.map((user:any) => { 
+                  return (
+                      <tr key={user.id}>
+                          <td className="border-2 p-8">{user.id}</td>
+                          <td className="border-2 p-8">{user.name}</td>
+                          <td className="border-2 p-8">{user.username}</td>
+                          <td className="border-2 p-8">{user.email}</td>
+                          <td className="border-2 p-8">
+                          {`${user.address.street}, ${user.address.suite}, ${user.address.city}, ${user.address.zipcode}`}
+                          </td>
+                          <td className="border-2 p-8">{user.phone}</td>
+                          <td className="border-2 p-8">{user.company.name}</td>
+                      </tr>
                 )
             }) }
           </tbody>
