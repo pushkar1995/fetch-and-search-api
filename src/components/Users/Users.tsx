@@ -4,9 +4,10 @@ import { User } from "../../interface"
 import UserSearchBar from "./UserSearchBar"
 import UsersTable from "./UsersTable"
 import { getUsers } from "../../hooks/useUserData"
+import LoadingSpinner from "../CustomMessage/LoadingSpinner"
 
 export default function Users () {
-  const { data } = useQuery("user", getUsers())
+  const { data, isLoading } = useQuery("user", getUsers())
     const [searchUser, setSearchUser] = useState('')
     
     // Filter users based on search input
@@ -18,14 +19,18 @@ export default function Users () {
 
     return (
       <div className="flex flex-col m-16">
-        <h1 className="font-bold flex justify-center mb-8 text-xl">USERS</h1>
-        <UserSearchBar 
-          setSearchUser = {setSearchUser}
-          searchUser = {searchUser}
-        />
-        <UsersTable
-           filteredUsers = {filteredUsers}
-        />
+          <h1 className="font-bold flex justify-center mb-8 text-xl">USERS</h1>
+            <UserSearchBar 
+              setSearchUser = {setSearchUser}
+              searchUser = {searchUser}
+            />
+            { 
+              isLoading ? <LoadingSpinner />
+              :  
+              <UsersTable
+                filteredUsers = {filteredUsers}
+              />
+            }
       </div>
     )
   }
