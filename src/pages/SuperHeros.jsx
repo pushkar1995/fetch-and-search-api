@@ -18,10 +18,10 @@ const SuperHeros = () => {
 
   return (
     <div className='flex flex-col m-16'>
-        <h2>Super Heros Page!!!</h2>
+        <h2 className='font-bold'>Super Heros Page!!!</h2>
         {data.map((hero) => {
             return <div key={hero.name}>{hero.name}</div>
-         }) }
+         })}
     </div>
   )
 }
