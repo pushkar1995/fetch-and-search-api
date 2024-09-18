@@ -7,8 +7,6 @@ export default function HomePage() {
     // const { data } = useQuery("user", getUsers())
   return (
     <>
-        <Navbar />
-        {/* <Users userData = {data} /> */}
         <Users />
     </>
   )

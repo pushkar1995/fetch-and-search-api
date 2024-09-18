@@ -1,8 +1,9 @@
-# React + Vite
+Reference Youtube Video : https://www.youtube.com/watch?v=Nm0inP3B_zs&list=PLC3y8-rFHvwjTELCrPrcZlo6blLBUspd2&index=2
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Reference Github Repo: https://github.com/gopinav/React-Query-Tutorials/tree/master
 
-Currently, two official plugins are available:
+$ npm install json-server
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Add in scripts tag in package.json "serve-json": "json-server --watch db.json --port 4000"
+
+$ npm run serve-json //to run json server
