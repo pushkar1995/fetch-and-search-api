@@ -1,33 +1,12 @@
-DOGMA REACT TASK!!!!
+Reference Youtube Video :
+https://www.youtube.com/watch?v=Nm0inP3B_zs&list=PLC3y8-rFHvwjTELCrPrcZlo6blLBUspd2&index=2
 
-Task Overview: Task is Completed using React with vite, alongside typescript, tailwindcss and react query to manage api.
+Reference Github Repo:
+https://github.com/gopinav/React-Query-Tutorials/tree/master
 
-Task Title: Create a Searchable Data Table with React
+$ npm install json-server
 
-Objective: Build a simple React application that fetches data from a public API, displays it in a table, and allows the user to search through the data.
+Add in scripts tag in package.json
+"serve-json": "json-server --watch db.json --port 4000"
 
-Requirements:
-
-1. Fetch Data:
-
-- Use the public API: JSONPlaceholder - Users Endpoint to fetch a list of users.
-- Make an HTTP GET request to https://jsonplaceholder.typicode.com/users to retrieve the user data.
-  
-2. Display Data in a Table:
-
-- Display the fetched data in a table format.
-- The table should have the following columns:
-    - Name
-    - Username
-    - Email
-    - Address (Street, Suite, City, Zipcode)
-    - Phone
-    - Company Name
-  
-3. Implement Search Functionality:
-
-- Add a search input field above the table.
-- The user should be able to search by Name, Username, or Email.
-
-4. Submission:
-- A GitHub repository with the complete React application code. (you can provide github link in this reply)
+$ npm run serve-json //to run json server
