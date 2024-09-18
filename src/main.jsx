@@ -4,6 +4,7 @@ import { BrowserRouter } from 'react-router-dom';
 import App from './App.jsx'
 import './index.css'
 import { QueryClient, QueryClientProvider } from 'react-query';
+import { ReactQueryDevtools } from 'react-query/devtools'
 
 //Create a client
 const queryClient = new QueryClient()
@@ -13,5 +14,6 @@ createRoot(document.getElementById('root')).render(
     <StrictMode>
         <App />
     </StrictMode>
+      <ReactQueryDevtools initialIsOpen={false} position='bottom-right' />
   </QueryClientProvider>    
 )
