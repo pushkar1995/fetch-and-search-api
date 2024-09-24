@@ -15,8 +15,8 @@ const RQSuperHeroDetails = () => {
   }
 
   return (
-    <div>
-      <h2>RQ Super Hero Details Page!!</h2>
+    <div className='flex flex-col m-16'>
+      <h2 className='bold'>RQ Super Hero Details Page!!</h2>
       {data?.data.name} - {data?.data.alterEgo}
     </div>
   )

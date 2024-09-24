@@ -13,6 +13,9 @@ const Navbar = () => (
       <h1 className="mt-10 mr-20 font-bold w-36">
         <Link to='/rq-super-heroes'>RQ Super Heroes</Link>
       </h1>
+      <h1 className="mt-10 mr-20 font-bold w-36">
+        <Link to='/rq-parallel'>Parallel Queries</Link>
+      </h1>
     </nav>
   </>
 );
