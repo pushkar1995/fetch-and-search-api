@@ -22,7 +22,11 @@ const RQSuperHeroes = () => {
         {
             // enabled: false,
             onSuccess,
-            onError
+            onError,
+            select: (data) => { 
+                const superHeroNames = data.data.map((hero) => hero.name)
+                return superHeroNames
+            },
         }
     )
 
@@ -40,9 +44,14 @@ const RQSuperHeroes = () => {
     <div className='flex flex-col m-16'>
         <h2 className='font-bold'>RQSuperHeroes Page!!!</h2>
         <button className='border-2 border-black' onClick={refetch}>Fetch Heroes</button>
-        {data?.data.map((hero) => {
+        {/* {data?.data.map((hero) => {
             return <div key={hero.name}>{hero.name}</div>
-         })}
+         })} */}
+        {
+            data.map(heroName => { 
+                return <div key={heroName}>{heroName}</div>
+            })
+        }
     </div>
   )
 }
