@@ -16,6 +16,9 @@ const Navbar = () => (
       <h1 className="mt-10 mr-20 font-bold w-36">
         <Link to='/rq-parallel'>Parallel Queries</Link>
       </h1>
+      <h1 className="mt-10 mr-20 font-bold w-36">
+        <Link to='/rq-dynamic-parallel'>Dynamic Parallel Queries</Link>
+      </h1>
     </nav>
   </>
 );
