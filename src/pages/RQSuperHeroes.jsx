@@ -1,18 +1,18 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import { useSuperHeroesData } from '../hooks/useSuperHeroesData'
 
 const RQSuperHeroes = () => {
+    const { heroId } = useParams()
 
-    const onSuccess = (data) => { 
-        console.log('Perform side effect after data fetching', data)
-    }
+    // const onSuccess = (data) => { 
+    //     console.log('Perform side effect after data fetching', data)
+    // }
 
-    const onError = (error) => { 
-        console.log('Perform side effect after encountering error', error)
-    }
+    // const onError = (error) => { 
+    //     console.log('Perform side effect after encountering error', error)
+    // }
 
-    const { isLoading, data, isError, error, isFetching, refetch } = useSuperHeroesData(onSuccess, onError)
+    const { isLoading, data, error, isFetching } = useSuperHeroesData(heroId)
 
     console.log({ isLoading, isFetching})
 
@@ -29,19 +29,21 @@ const RQSuperHeroes = () => {
         <h2 className='font-bold'>RQSuperHeroes Page!!!</h2>
         {/* <button className='border-2 border-black' onClick={refetch}>Fetch Heroes</button> */}
 
-        {data?.data.map((hero) => {
+        {/* {data?.data.map((hero) => {
             return (
                 <div key={hero.id}>
                     <Link to={`/rq-super-heroes/${hero.id}`}>{hero.name}</Link>
                 </div>
             )  
-         })}
+         })} */}
 
         {/* {
             data.map(heroName => { 
                 return <div key={heroName}>{heroName}</div>
             })
         } */}
+
+        <div>{data?.data.name} - {data?.data.alterEgo}</div>
     </div>
   )
 }
