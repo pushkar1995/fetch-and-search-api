@@ -25,6 +25,9 @@ const Navbar = () => (
       <h1 className="mt-10 mr-20 font-bold w-36">
         <Link to='/rq-paginated'>Paginated Queries</Link>
       </h1>
+      <h1 className="mt-10 mr-20 font-bold w-36">
+        <Link to='/rq-infinite-queries'>Infinite Queries</Link>
+      </h1>
     </nav>
   </>
 );

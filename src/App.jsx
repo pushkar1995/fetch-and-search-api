@@ -6,6 +6,7 @@ import ParallelQueriesPage from './pages/ParallelQueriesPage.jsx';
 import DynamicParallelQueriesPage from './pages/DynamicParallelQueriesPage.jsx';
 import DependentQueriesPage from './pages/DependentQueriesPage.jsx';
 import PaginatedQueries from './pages/PaginatedQueries.jsx';
+import InfiniteQueries from './pages/InfiniteQueries.jsx';
 import SuperHeros from './pages/SuperHeros';
 import Navbar from './components/Navbar';
 
@@ -23,6 +24,7 @@ function App() {
           <Route path="/rq-dynamic-parallel" element={<DynamicParallelQueriesPage heroIds={[1, 3]} />}></Route>
           <Route path="/rq-dependent" element={<DependentQueriesPage email='puskar@gmail.com' />}></Route>
           <Route path="/rq-paginated" element={<PaginatedQueries />}></Route>
+          <Route path="/rq-infinite-queries" element={<InfiniteQueries />}></Route>
           <Route path="*" element={<div>Page not found 404</div>} />
         </Routes>
       </div>
