@@ -39,6 +39,21 @@
       "id": "731a",
       "name": "Spiderman",
       "alterEgo": "Peter Parker"
+    },
+    {
+      "id": "86b7",
+      "name": "Aquaman",
+      "alterEgo": "Arthur Curry"
+    },
+    {
+      "id": "b59f",
+      "name": "Aquaman2 ",
+      "alterEgo": "Aurther Dhal"
+    },
+    {
+      "id": "fc68",
+      "name": "Aquaman3",
+      "alterEgo": "Aurther Dhal"
     }
   ],
   "friends": [
